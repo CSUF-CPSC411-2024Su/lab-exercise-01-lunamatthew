@@ -19,3 +19,29 @@ protocol Volunteer: ObservableObject {
 // TODO: Create an initializer without parameters that sets name to an empty string and age to 0.
 
 // TODO: Create another initializer that accepts a a String parameter called name and an Int parameter called age. Assign the parameter values to the corresponding properties of the class.
+
+// Lab exercise 1 completed by Matthew Luna
+// CPSC 411
+// 07/08/2024
+
+class SafeWalkVolunteer : Volunteer {
+    var name: String
+    var age: Int
+    var maxHours: Int {
+        if age < 18 {
+            return 1
+        } else {
+            return 3
+        }
+    }
+    
+    init() {
+        self.name = ""
+        self.age = 0
+    }
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
